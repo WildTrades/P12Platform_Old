@@ -144,7 +144,7 @@ export default function BridgeSwitch() {
       .catch((error) => {
         console.log(error);
       });
-  }, [selectedBadge, chain?.id, address]);
+  }, [NFTContract, selectedBadge, chain?.id, address]);
 
   useEffect(() => {
     const galxeBadges: GalxeBadge[] = ((data as any)?.user as NFTQueryResult)?.galxeBadges;

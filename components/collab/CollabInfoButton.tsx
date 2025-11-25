@@ -87,7 +87,7 @@ export default function CollabInfoButton({ data }: CollabInfoButtonProps) {
       return;
     }
     mutationJoin.mutate({ collabCode, walletAddress: address });
-  }, [collabCode, address, mutationJoin, setConnectOpen, isJoined]);
+  }, [collabCode, address, isJoined, setConnectOpen, mutationJoin]);
 
   const handleChainJoin = useCallback(async () => {
     if (isChainJoined || !collabContract) return;
@@ -127,7 +127,7 @@ export default function CollabInfoButton({ data }: CollabInfoButtonProps) {
       toast.error(<Message title="Ah shit, here we go again" message="save error" />);
       setIsWriteLoading(false);
     }
-  }, [isChainJoined, collabContract, address, isCorrectNetwork, setConnectOpen, switchNetwork, collabCode, onChainIpfs]);
+  }, [collabCode, collabContract, isChainJoined, isCorrectNetwork, onChainIpfs, setConnectOpen, switchNetwork, address, mutationJoin]);
 
   useEffect(() => {
     if (

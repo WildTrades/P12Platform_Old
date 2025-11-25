@@ -29,6 +29,7 @@ export enum COLLAB_NFT_STATUS {
 
 export enum CHAIN_ID {
   MAINNET = 1,
+  POLYGON = 137,
   BSC_MAINNET = 56,
   BSC_TESTNET = 97,
 }
