@@ -25,6 +25,10 @@ export function useContract<TAbi extends Abi>(address?: Address, abi?: TAbi, cha
   }, [abi, address, publicClient, walletClient]);
 }
 
+export function useChainPublicClient(chainId?: number) {
+  return usePublicClient({ chainId });
+}
+
 export function useBABTBalanceOf({ address }: { address?: Address }) {
   const { chain } = useNetwork();
   const babtAddress = chain ? BABT_ADDRESSES[chain.id] : undefined;
